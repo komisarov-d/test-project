@@ -1,0 +1,31 @@
+.react-multi-carousel-list{
+    position: unset;
+}
+
+.react-multiple-carousel__arrow {
+	font-size: 14px;
+    background-color: white;
+	box-shadow: 0 2px 8px 0 rgb(0 0 0 / 16%);
+	min-width: 36px;
+	min-height: 36px;
+    top: 140px;
+}
+
+.react-multiple-carousel__arrow:hover {
+    background-color: white;
+}
+
+.react-multiple-carousel__arrow::before {
+	color: black;
+	font-size: 16px;
+    
+}
+
+.react-multiple-carousel__arrow--right {
+	right: -5px;
+	
+}
+
+.react-multiple-carousel__arrow--left {
+	left: -15px;
+}

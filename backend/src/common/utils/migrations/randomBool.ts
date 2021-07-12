@@ -1,0 +1,1 @@
+export const randomBool = () => Math.round(Math.random());

@@ -1,0 +1,88 @@
+{
+    "title": {
+        "btnReserve": "Reserve",
+        "priceMatch": "We price match"
+    },
+    "description": {
+        "guestsprefecences": "Guests love...",
+        "twoPersonTrip": "Couples in particular like the location - they rated it {rating} for a two-person trip.",
+        "topLocation": "Top location: Highly rated by recent guests",
+        "freeWiFi": "Free WiFi",
+        "freeParking": "Free parking available on-site",
+        "reserveBtn": "Reserve",
+        "saveBtn": "Save so you remember to book",
+        "greatLocation": "Great location - show on the map",
+        "bestseller": "One of our bestsellers in ",
+        "centerOfCity": "Stay in the heart of ",
+        "propertyRegistrationDate": " has been welcoming Booking.com guests since "
+    },
+    "facilities": {
+        "mostPopularFacilities": "Most popular facilities",
+        "allFacilities": {
+            "TV": "TV", 
+            "Slippers": "Slippers", 
+            "Telephone": "Telephone", 
+            "Hairdryer": "Hairdryer", 
+            "FreeToiletries": "Free toiletries", 
+            "Shover": "Shover", 
+            "Towels": "Towels", 
+            "Carpeted": "Carpeted"
+    
+        }
+    },
+    "roomsDetails": {
+        "tableHead": {
+            "apartmentsType": "Apartment type",
+            "sleeps": "Sleeps",
+            "price": "Price for N nights",
+            "yourChoices": "Your choices",
+            "quantity": "Quantity"
+        },
+        "row": {
+            "priceText": "Price {price}$ Includes taxes and charges",
+            "bookBtnText": "Book now"
+        }
+    },
+    "roomsSummary": {
+        "tableHead": {
+            "sleeps": "Sleeps",
+            "roomType": "Room type"
+        },
+        "showPriceBtn": "Show price"
+    },
+    "availabilityPanel": {
+        "title": "Availability",
+        "formTitle": "When you would like to stay at ",
+        "checkAvailabilityBtn": "Check availability"
+    },
+    "roomTypes": {
+        "standartTwinRoom": "Standart twin room",
+        "standartDoubleRoom": "Standart double room"
+    },
+    "iconsText": {
+        "parking":"Free parking",
+		"wifi":"Free WiFi",
+		"family":"Family rooms",
+		"nosmoking":"Non-smoking rooms",
+		"heater":"Heating",
+		"cocktail":"Bar",
+		"pets":"Pets allowed",
+		"kitchen":"Kitchen"
+    },
+    "availabilityCard": {
+        "noCard": {
+            "title": "No credit card needed to book",
+            "subtitle": "We'll send you an email confirming your reservation",
+            "icon": "creditcard"
+        },
+        "bookInAdvance": {
+            "title": "Lock in great price for your upcoming stay",
+            "subtitle": "Get instant confirmation with FREE cancelation on most rooms!",
+            "icon": "unlock"
+        }
+    },
+    "advantages": {
+        "noCard": "No credit card needed",
+        "noPrepayment": "NO PREPAYMENT NEEDED"
+    }
+}

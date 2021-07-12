@@ -1,0 +1,104 @@
+reviews:
+    post:
+        tags:
+        - Reviews
+        summary: Create review 
+        consumes: application/json
+        properties: ''
+        requestBody:
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-schemas.yaml#/review'
+        responses:
+          '200':
+            description: 'Created review'
+            content:
+              application/json:
+                schema:
+                  $ref: 'swagger-schemas.yaml#/review'
+          '400':
+            description: 'Incorrect data'
+    get:
+      tags:
+      - Reviews
+      summary: Get all reviews
+      responses:
+        '200':
+          description: 'All reviews'
+          content:
+            application/json:
+              schema: 
+                properties:
+                  results:
+                    type: array
+                    items: 
+                      $ref: 'swagger-schemas.yaml#/review'
+reviews-by-id:
+    get:
+        tags:
+        - Reviews
+        summary: Get review by id
+        parameters:
+          - in: path
+            name: id
+            schema:
+              type: integer
+            required: true
+            description: ID of the review
+        responses:
+          '200':
+            description: 'Reviews with matched id'
+            content:
+              application/json:
+                schema:
+                  $ref: 'swagger-schemas.yaml#/review'
+          '404':
+            description: 'Not found'
+            content:
+              application/json:
+                schema:
+                  properties:
+                    message:
+                      type: string
+    delete:  
+      tags:
+        - Reviews
+      summary: Delete review   
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the review
+      responses:
+        '200':
+          description: 'Deleted review data'
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-schemas.yaml#/review'
+    put:  
+      tags:
+        - Reviews
+      summary: Update review   
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/review'
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID of the review
+      responses:
+        '200':
+          description: 'updated review data'
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-schemas.yaml#/review'

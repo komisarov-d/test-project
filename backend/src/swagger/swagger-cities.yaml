@@ -1,0 +1,22 @@
+cities:
+  get:
+    tags:
+    - Cities
+    summary: Get all cities
+    parameters:
+      - in: query
+        name: name
+        schema:
+          type: string
+        description: city name filter
+    responses:
+      '200':
+        description: 'Cities list'
+        content:
+          application/json:
+            schema: 
+              properties:
+                results:
+                  type: array
+                  items: 
+                    $ref: 'swagger-schemas.yaml#/city'

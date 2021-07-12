@@ -1,0 +1,55 @@
+{
+  "scripts": {
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install",
+    "install:all": "npm install && npm run install:backend && npm run install:frontend"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^5.2.0",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,scss,json,md,js}": [
+      "prettier --write"
+    ],
+    "frontend/src/**/*.ts": [
+      "eslint --fix --max-warnings=0 --config ./frontend/.eslintrc "
+    ],
+    "backend/src/**/*.ts": [
+      "eslint --fix --max-warnings=6 --config ./backend/.eslintrc",
+      "git add"
+    ],
+    "backend/tests/**/*.ts": [
+      "eslint --fix --max-warnings=0 --config ./backend/.eslintrc"
+    ],
+    "lambdas/**/*.js": [
+      "eslint --fix --max-warnings=0 --config ./backend/.eslintrc"
+    ]
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@storybook/react": "^6.2.9",
+    "env": "^0.0.2",
+    "react-multi-carousel": "^2.6.3",
+    "redux": "^4.1.0"
+  }
+}

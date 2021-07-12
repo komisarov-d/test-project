@@ -1,0 +1,250 @@
+
+properties:
+    get:
+      tags:
+      - Property
+      summary: Get properties
+      parameters:
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: get specific page with properties.
+        - in: query
+          name: amenities[]
+          schema:
+            type: array
+            items:
+              type: string
+          description: Required amenities filter
+        - in: query
+          name: average_price[]
+          schema:
+            type: array
+            items:
+              type: number
+          description: Min max price filter. [min_price, max_price]
+        - in: query
+          name: rating[]
+          schema:
+            type: array
+            items:
+              type: number
+          description: Rating filter.
+        - in: query
+          name: roomAmenities[]
+          schema:
+            type: array
+            items:
+              type: string
+          description: Required room amenities filter
+        - in: query
+          name: type[]
+          schema:
+            type: array
+            items:
+              type: string
+          description: Property type filter
+        - in: query
+          name: city
+          schema:
+            type: string
+          description: Destination city filter
+        - in: query
+          name: rooms
+          schema:
+            type: number
+          description: Rooms amount filter
+        - in: query
+          name: adults
+          schema:
+            type: number
+          description: Adults amount filter
+        - in: query
+          name: children
+          schema:
+            type: number
+          description: Children amount filter
+        - in: query
+          name: date[]
+          schema:
+            type: array
+            items:
+              type: number
+          description: Check in and check out dates. [Date().getTime(), Date().getTime()]
+      responses:
+        '200':
+          description: 'List of properties that matched filters'
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-schemas.yaml#/propertiesList'
+        '400':
+          description: 'Query params error'
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+    post:
+      tags:
+      - Property
+      summary: Add property
+      consumes: application/json
+      properties: ''
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/property'
+      responses:
+        '200':
+          description: 'Created property'
+          content:
+            application/json:
+              schema:
+                $ref: 'swagger-schemas.yaml#/property'
+        '400':
+          description: 'Error'
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string                
+properties_by_id:
+  get:
+    tags:
+    - Property
+    summary: Get properties
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: ID of the property
+      - in: query
+        name: page
+        schema:
+          type: integer
+        description: get specific page with properties.
+      - in: query
+        name: amenities[]
+        schema:
+          type: array
+          items:
+            type: string
+        description: Required amenities filter
+      - in: query
+        name: average_price[]
+        schema:
+          type: array
+          items:
+            type: number
+        description: Min max price filter. [min_price, max_price]
+      - in: query
+        name: rating[]
+        schema:
+          type: array
+          items:
+            type: number
+        description: Rating filter.
+      - in: query
+        name: roomAmenities[]
+        schema:
+          type: array
+          items:
+            type: string
+        description: Required room amenities filter
+      - in: query
+        name: type[]
+        schema:
+          type: array
+          items:
+            type: string
+        description: Property type filter
+      - in: query
+        name: city
+        schema:
+          type: string
+        description: Destination city filter
+      - in: query
+        name: rooms
+        schema:
+          type: number
+        description: Rooms amount filter
+      - in: query
+        name: adults
+        schema:
+          type: number
+        description: Adults amount filter
+      - in: query
+        name: children
+        schema:
+          type: number
+        description: Children amount filter
+      - in: query
+        name: date[]
+        schema:
+          type: array
+          items:
+            type: number
+        description: Check in and check out dates. [Date().getTime(), Date().getTime()]
+    responses:
+      '200':
+        description: 'List of properties that matched filters'
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/propertiesList'
+      '400':
+        description: 'Query params error'
+        content:
+          application/json:
+            schema:
+              properties:
+                message:
+                  type: string
+  delete:  
+    tags:
+      - Property
+    summary: Delete property   
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: ID of the property
+    responses:
+      '200':
+        description: 'Deleted property data'
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/property'          
+  put:  
+    tags:
+      - Property
+    summary: Update property   
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: 'swagger-schemas.yaml#/property'
+    parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        required: true
+        description: ID of the property
+    responses:
+      '200':
+        description: 'updated property data'
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/property'       

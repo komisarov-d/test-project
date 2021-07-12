@@ -1,0 +1,209 @@
+login:
+  properties:
+    email:
+      type: string
+      example: test@test.com
+    password:
+      type: string
+      example: "111111"
+
+register:
+  properties:
+    email:
+      type: string
+      example: test@test.com
+    firstName:
+      type: string
+      example: firstname
+    lastName:
+      type: string
+      example: lastname
+    password:
+      type: string
+      example: "111111"  
+    confirm:
+      type: string
+      example: "111111"  
+
+userToken:
+  properties:
+    token:
+      type: string
+    refreshToken:
+      type: string
+    user: 
+      type: object
+      properties:
+        id:
+          type: integer
+        firstname:
+          type: string
+        lastname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        createdAt: 
+          type: string
+        updatedAt: 
+          type: string
+
+loginError:
+  properties:
+    message:
+      type: string
+
+refreshToken:
+  properties:
+    refreshToken:
+      type: string
+
+refreshTokenSuccess:
+  properties:
+    token:
+      type: string
+      
+propertiesList:
+  properties:
+    total: 
+      type: number
+    results:
+      type: array
+      items:
+        $ref: '#property'
+
+property:
+  properties:
+    id:
+      type: number
+    name: 
+      type: string
+    description: 
+      type: string
+    ownerId:
+      type: number
+    countryId:
+      type: number
+    cityId:
+      type: number
+    street: 
+      type: string
+    rating:
+      type: number
+    latitude:
+      type: number
+    longitude:
+      type: number
+    createdAt:
+      type: string
+    updatedAt:
+      type: string
+    city:
+      type: string
+    country: 
+      type: string
+    amenities:
+      type: array
+      items:
+        type: string
+    images:
+      type: array
+      items:
+        type: object
+        properties:
+          id: 
+            type: number
+          url: 
+            type: string
+
+facility:
+  properties:
+    id:
+      type: number
+    propertyId: 
+      type: number
+    description: 
+      type: string
+    price:
+      type: number
+    quantity:
+      type: number
+    persons:
+      type: number
+    rooms:
+      type: number
+    roomAmenities:
+      type: array
+      items:
+        type: string
+
+booking:
+  properties:
+    userId:
+      type: number
+    propertyId: 
+      type: number
+    cityId: 
+      type: number
+    price:
+      type: number
+    isActive:
+      type: string
+    startDate:
+      type: string
+    finishDate:
+      type: string
+    images:
+      type: array
+      items:
+        type: object
+        properties:
+          id: 
+            type: number
+          url: 
+            type: string
+
+booking-rooms:
+  properties:
+    id: 
+      type: number
+    bookingId:
+      type: number
+    roomId: 
+      type: number
+  
+city:
+  properties:
+    id: 
+      type: number
+    name:
+      type: string
+    countryId: 
+      type: number
+
+review:
+  properties:
+    id: 
+      type: number
+    userId:
+      type: number
+    bookingId:
+      type: number
+    like:
+      type: string
+    dontLike:
+      type: string
+    rating:
+      type: number
+    meetExpectation: 
+      type: boolean
+    # TODO: fix travell -> travel in the API
+    travellForWork:
+      type: boolean
+    travellPartners:
+      type: array
+      items:
+        type: string
+    generalImpressions:
+      type: string

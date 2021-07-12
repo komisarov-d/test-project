@@ -1,0 +1,65 @@
+{
+    "tabsNames": ["User profile", "Booking list", "Reviews" ],
+    "userInfo": {
+        "DataRowsLabels": {
+            "name": "Name",
+            "address": "Address",
+            "birthDate": "Birth date",
+            "email": "Email",
+            "password": "Password",
+            "phone": "Phone number"
+        },
+        "dataRowsYupErrors": {
+            "name": {
+                "firstName": "First name is required",
+                "lastName": "Last name is required"
+            },
+            "address": "Address is required",
+            "email": {
+                "invalid": "Email is invalid",
+                "required": "Email is required"
+            },
+            "password": {
+                "required": "Password is required",
+                "match": "Passwords don't match",
+                "repeat": "Repeat password"
+            }
+        },
+        "title": {
+            "main": "Personal details",
+            "sub": "Update your information and find out how it's used."
+        }
+    },
+    "dataRow": {
+        "btnCancel": "Cancel",
+        "btnEdit": "Edit",
+        "btnSave": "Save"
+    },
+    "editableFieldslabels": {
+        "firstName": "First name",
+        "lastName": "Last name",
+        "newPassword": "New password",
+        "repeatPassword": "Repeat password",
+        "email": "Email",
+        "address": "Address",
+        "birthDate": "Date of birth",
+        "phone": "Phone number"
+    },
+    "userReviews": {
+        "title": {
+            "main": "Your reviews",
+            "sub": "Check your previous reviews."
+        }
+    },
+    "userBookings": {
+        "currency": "US$",
+        "title": {
+            "main": "Your bookings",
+            "sub": "Check your previous bookings."
+        },
+        "error": {
+            "title" : "Oops! Somethings went wrong",
+            "text" : "Sorry, we are unable to load your bookings. We are already trying to solve this problem. Please try again later."
+        } 
+    }
+}

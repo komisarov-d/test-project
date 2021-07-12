@@ -1,0 +1,36 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5532:5432"
+    volumes:
+      - radency-db:/var/lib/postgresql/data
+
+  backend:
+    build: backend/
+    env_file:
+      - ./backend/.env
+    environment:
+      APP_SERVER_PORT: "3003"
+      APP_SERVER_SOCKET_PORT: "3002"
+      ENVIRONMENT: development
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres
+    depends_on:
+      - postgres
+    ports:
+      - "3003:3003"
+      - "9290:9229"
+
+  frontend:
+    build: frontend/
+    ports:
+      - "3000:3000"
+    stdin_open: true
+
+volumes:
+  radency-db:

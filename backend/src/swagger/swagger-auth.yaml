@@ -1,0 +1,67 @@
+login:
+  post:
+    tags:
+    - Authentication
+    summary: User login
+    consumes: application/json
+    properties: ''
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: 'swagger-schemas.yaml#/login'
+    responses:
+      '200':
+        description: 'User token.'
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/userToken'
+      '401':
+        description: 'Either email or password is incorrect.'
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/loginError'
+register:
+  post:
+    tags:
+    - Authentication
+    summary: User register
+    consumes: application/json
+    properties: ''
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: 'swagger-schemas.yaml#/register'
+    responses:
+      '200':
+        description: 'User token.'
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/userToken'
+      '400':
+        description: 'Email is already taken.'
+token:
+  post:
+    tags:
+    - Authentication
+    summary: Refresh token
+    consumes: application/json
+    properties: ''
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: 'swagger-schemas.yaml#/refreshToken'
+    responses:
+      '200':
+        description: 'User token.'
+        content:
+          application/json:
+            schema:
+              $ref: 'swagger-schemas.yaml#/refreshTokenSuccess'
+      '401':
+        description: 'Invalid token'
